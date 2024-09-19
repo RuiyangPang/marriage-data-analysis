@@ -1,0 +1,90 @@
+---
+title: "My title"
+subtitle: "My subtitle if needed"
+author: 
+  - First author
+  - Another author
+thanks: "Code and data are available at: LINK."
+date: today
+date-format: long
+abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+```
+
+
+# Introduction
+
+You can and should cross-reference sections and sub-sections. We use @citeR.
+
+The remainder of this paper is structured as follows. @sec-data....
+
+
+
+# Data {#sec-data}
+
+
+And also planes (@fig-planes).
+
+```{r}
+#| label: fig-planes
+#| fig-cap: Relationship between date and marriage
+#| echo: false
+#| warning: false
+#| message: false
+
+analysis_data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+analysis_data |> 
+  ggplot(aes(x = date, y = marriage_licenses)) +
+  geom_point(alpha = 0.8)
+  
+```
+
+Talk way more about it. 
+
+
+# Results
+
+
+# Discussion
+
+## First discussion point {#sec-first-point}
+
+## Second discussion point
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+# Additional data details
+
+# Model details {#sec-model-details}
+
+
+
+\newpage
+
+
+# References
+
+
